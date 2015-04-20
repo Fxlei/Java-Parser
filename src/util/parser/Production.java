@@ -8,6 +8,14 @@ public @interface Production {
 	Class<?>[] maybe() default {};
 	
 	enum Symbol {
-		NONE, SOF;
+		/** no special attributes */
+		NONE,
+		/** may accept being the first production */
+		SOI,
+		/**
+		 * may accept empty input, used to confirm a parsing ends correctly and
+		 * to finalize parsing
+		 */
+		EOI;
 	}
 }
