@@ -13,7 +13,7 @@ package util.parser;
  * @version 1.1
  *
  */
-public interface ParserInput {
+public interface ParserInput extends CharSequence{
 	/**
 	 * Reads the first char without discarding it. This does not advance the
 	 * cursor. Consecutive calls to this {@link ParserInput#peek()} should
