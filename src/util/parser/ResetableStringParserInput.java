@@ -66,4 +66,19 @@ public class ResetableStringParserInput implements ResetableParserInput {
 		pos = 0;
 	}
 	
+	@Override
+	public int length() {
+		return input.length() - pos;
+	}
+	
+	@Override
+	public char charAt(int index) {
+		return input.charAt(index + pos);
+	}
+	
+	@Override
+	public CharSequence subSequence(int start, int end) {
+		return input.subSequence(start+pos, end+pos);
+	}
+	
 }
